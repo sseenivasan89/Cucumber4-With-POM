@@ -1,7 +1,13 @@
--Cucumber 4 with POM
+# Cucumber 4 with Page Object Model
 
--With Maven Cucumber Report
+## Test Example Commands
 
--Simply run mvn clean verify to run test from cmd
+```
+mvn clean verify
+```
 
--Run Parallel Test from POM
+> Features
+> - Hooks
+> - Parallel Execution
+> - Page Object Model
+> - Maven Cucumber Reporting
