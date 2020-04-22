@@ -1,5 +1,7 @@
 # Cucumber 4 with Page Object Model
 
+**Clone the project Directory**
+
 ## Test Example Commands
 
 ```
