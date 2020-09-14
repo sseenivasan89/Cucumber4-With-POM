@@ -33,11 +33,11 @@ public class Hook {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
 		File folder = new File(System.getProperty("user.dir") + "/FailedScreenshots/");
-		for (File f : folder.listFiles()) {
-			if (f.getName().endsWith(".png")) {
-				f.delete();
-			}
-		}
+		//for (File f : folder.listFiles()) {
+		//	if (f.getName().endsWith(".png")) {
+		//		f.delete();
+		//	}
+		// }
 	}
 
 	@After
