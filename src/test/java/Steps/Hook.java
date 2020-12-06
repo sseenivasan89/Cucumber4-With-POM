@@ -6,6 +6,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,12 +24,20 @@ public class Hook {
 	@Before
 	public void startSetUp() {
 
+		System.setProperty("webdriver.chrome.silentOutput", "true");
 		WebDriverManager.chromedriver().setup();
-		ChromeOptions chromeOptions = new ChromeOptions();
-		//chromeOptions.addArguments("--headless");
-		driver = new ChromeDriver(chromeOptions);
-		//driver.manage().window().maximize();
-		// driver.manage().window().fullscreen();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("enable-automation");
+		//options.addArguments("--headless");
+		options.addArguments("--window-size=1920,1080");
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-extensions");
+		options.addArguments("--dns-prefetch-disable");
+		options.addArguments("--disable-gpu");
+		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+		options.addArguments("enable-features=NetworkServiceInProcess");
+		options.addArguments("disable-features=NetworkService");
+		driver = new ChromeDriver(options);
 		driver.manage().window().setSize(new Dimension(1200, 800));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
