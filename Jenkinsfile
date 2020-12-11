@@ -9,7 +9,7 @@ pipeline {
         }
          stage('mvn-build and test') {
             steps {
-                 bat label: '', script: 'mvn clean verify'
+                
             }
         }
         stage('generate cucumber report') {
