@@ -8,7 +8,7 @@
 mvn clean verify
 ```
 
-> Features
+> Features List
 > - Hooks
 > - Parallel Execution
 > - Page Object Model
